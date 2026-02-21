@@ -19,11 +19,11 @@ func GetDb() *pgxpool.Pool {
 }
 
 func DbConnect() error {
-	username := os.Getenv("DB_USER")
-	password := os.Getenv("DB_PASSW")
-	host := os.Getenv("DB_HOST")
-	port := os.Getenv("DB_PORT")
-	dbName := os.Getenv("DB_NAME")
+	username := os.Getenv("POSTGRES_USER")
+	password := os.Getenv("POSTGRES_PASSWORD")
+	host := os.Getenv("POSTGRES_HOST")
+	port := os.Getenv("POSTGRES_PORT")
+	dbName := os.Getenv("POSTGRES_DB")
 	dbUrl := fmt.Sprintf("postgres://%s:%s@%s:%s/%s", username, password, host, port, dbName)
 
 	config, err := pgxpool.ParseConfig(dbUrl)

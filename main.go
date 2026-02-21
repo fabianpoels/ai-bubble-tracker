@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/fabianpoels/ai-bubble-tracker/server"
 	"github.com/joho/godotenv"
 )
 
@@ -27,6 +28,6 @@ func main() {
 
 	switch *task {
 	case "server":
-		// server.Init()
+		server.Init()
 	}
 }
